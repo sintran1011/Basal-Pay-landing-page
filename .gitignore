@@ -1,0 +1,10 @@
+# Node artifact files
+node_modules/
+dist/
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
