@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+} */
+
+@layer components {
+  .center {
+    @apply flex justify-center items-center
+  }
+
+  .title {
+    @apply font-semibold xl:text-[48px] xl:leading-[56px] text-[28px] leading-[36px] text-[#202225] text-center lg:text-left
+  }
+
+  .subTitle {
+    @apply font-medium text-[22px] leading-8 text-[#787F84] text-center lg:text-left
+  }
+
+  .center-absolute {
+    @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+  }
+}
+
+.fadeAnimation {
+  animation: 3s ease 0s normal forwards 1 fadein;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+
+  66% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
