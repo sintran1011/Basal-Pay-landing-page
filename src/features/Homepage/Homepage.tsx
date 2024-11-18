@@ -1,3 +1,5 @@
+"use client"
+import useLenis from "@/utils/hooks/useLenis";
 import Banner from "./components/Banner";
 import FreeConsultation from "./components/FreeConsultation";
 import GrowYourBusiness from "./components/GrowYourBusiness";
@@ -9,6 +11,7 @@ import Upgrade from "./components/Upgrade";
 import WhoWeServe from "./components/WhoWeServe";
 
 const Homepage = () => {
+  useLenis();
   return (
     <div>
       <Banner />
