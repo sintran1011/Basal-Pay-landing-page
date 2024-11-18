@@ -10,7 +10,7 @@ async function LottieScrollTrigger(vars) {
     speeds = { slow: "+=2000", medium: "+=1000", fast: "+=500" },
     st = {
       trigger: target,
-      pin: true,
+      pin: false,
       start: "top top",
       end: speeds[vars.speed] || "+=1000",
       scrub: 1,

@@ -16,9 +16,9 @@ const Wrapper = (props: IProps) => {
   } = props;
   return (
     <div
-      className={`w-full max-w-[1440px] mx-auto overflow-hidden relative ${
+      className={`w-full max-w-[1440px] mx-auto relative ${
         hasBackground ? "bg-[#F5F6F7]" : ""
-      } xl:px-[128px] xl:pt-[80px] lg:py-12 lg:px-10 py-10 px-6 overflow-hidden ${className}`}
+      } xl:px-[128px] xl:pt-[80px] lg:py-12 lg:px-10 py-10 px-6 ${className}`}
     >
       {children}
       {hasDivine ? (

@@ -9,27 +9,27 @@ gsap.registerPlugin(ScrollTrigger);
 const WhoWeServe = () => {
   const contentArr = [
     {
-      src: "https://picsum.photos/500",
+      src: "/assets/who-we-serve1.png",
       text: "Service providers payouts",
     },
     {
-      src: "https://picsum.photos/500",
+      src: "/assets/who-we-serve2.png",
       text: "Service providers payouts",
     },
     {
-      src: "https://picsum.photos/500",
+      src: "/assets/who-we-serve3.png",
       text: "Service providers payouts",
     },
     {
-      src: "https://picsum.photos/500",
+      src: "/assets/who-we-serve4.png",
       text: "Service providers payouts",
     },
     {
-      src: "https://picsum.photos/500",
+      src: "/assets/who-we-serve5.png",
       text: "Service providers payouts",
     },
     {
-      src: "https://picsum.photos/500",
+      src: "/assets/who-we-serve6.png",
       text: "Service providers payouts",
     },
   ];
