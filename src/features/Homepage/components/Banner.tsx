@@ -1,4 +1,5 @@
 "use client";
+import BannerImage from "@/app/assets/icons/BannerImage";
 import BaseButton from "@/features/components/BaseButton";
 import Wrapper from "@/features/components/Wrapper";
 import { gsap } from "gsap";
@@ -22,13 +23,13 @@ const Banner = () => {
         ".char",
         {
           autoAlpha: 0,
-          scale:7,
-          rotateY:90
+          scale: 7,
+          rotateY: 90,
         },
         {
           autoAlpha: 1,
           ease: "power4.out",
-          rotateY:720,
+          rotateY: 720,
           scale: 1,
           duration: 0.5,
           stagger: 0.1,
@@ -70,19 +71,8 @@ const Banner = () => {
             <BaseButton type="primary">Let's Started</BaseButton>
             <BaseButton>Learn more</BaseButton>
           </div>
-          {/* <div className="h-[160px]" />
-          <div className="flex items-center gap-4">
-            <ArrowDownIcon />
-            <p className="font-medium text-[12px] leading-4 text-[#787F84]">
-              Scroll down
-            </p>
-          </div> */}
         </div>
-        <img
-          alt="mock"
-          src="https://picsum.photos/400"
-          className="xl:size-[90%] size-[375px] lg:col-span-2 col-span-5 mx-auto"
-        />
+        <BannerImage />
       </div>
     </Wrapper>
   );

@@ -1,8 +1,9 @@
 "use client";
 import Wrapper from "@/features/components/Wrapper";
+import LottieScrollTrigger from "@/utils/hooks/useLottieScrollTrigger";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useLayoutEffect } from "react";
+import { useLayoutEffect, useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -28,45 +29,42 @@ const GrowYourBusiness = () => {
       content: "24/7 near-instant settlement",
     },
   ];
-
+  const lottieTween = useRef<any>();
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: ".business-row",
           start: "top 60%",
-          // markers: true,
-          // scrub: true,
-          // toggleActions: "restart none reserve none",
         },
       });
-      tl.fromTo(".business-row", {
-        x: 50,
-        opacity: 0,
-        // rotateZ: 180,
-        // transformOrigin: "left 50%",
-      },{
-        duration: 1.5,
-        x: 0,
-        opacity: 1,
-        stagger: 0.5,
-        ease: "power4.out",
-        // rotateZ: 0,
-      })
-      // tl.from(".business-row", {
-      //   x: 1000,
-      //   opacity: 0,
-      //   rotateZ: 90,
-      //   // transformOrigin: "left 50%",
-      // }).to(".business-row", {
-      //   duration: 2,
-      //   x: 0,
-      //   opacity: 1,
-      //   stagger: 0.5,
-      //   ease: "power4.out",
-      //   rotateZ: 0,
-      // });
+      tl.fromTo(
+        ".business-row",
+        {
+          x: 50,
+          opacity: 0,
+        },
+        {
+          duration: 1.5,
+          x: 0,
+          opacity: 1,
+          stagger: 0.5,
+          ease: "power4.out",
+        }
+      );
     });
+    if (!lottieTween.current) {
+      lottieTween.current = LottieScrollTrigger({
+        trigger: ".business",
+        target: ".lottie-container1",
+        path: "/GrowBusiness.json",
+        speed: "medium",
+        start: "top 40%",
+        scrub: false,
+        toggleActions: "restart none none none",
+        // markers: true,
+      });
+    }
     return () => ctx.revert();
   }, []);
 
@@ -84,13 +82,16 @@ const GrowYourBusiness = () => {
     ));
   };
   return (
-    <Wrapper hasBackground className="2xl:px-0 2xl:pr-16">
+    <Wrapper hasBackground className="2xl:px-0 2xl:pr-16 business">
       <div className="grid grid-cols-5 items-center gap-10">
-        <img
+        {/* <img
           src="/assets/grow-your-business.png"
           alt="grow-business"
           className="lg:col-span-3 col-span-5 mx-auto"
-        />
+        /> */}
+        <div className="lg:col-span-3 col-span-5 mx-auto lottie-container1">
+          {/* <Lottie animationData={animationData} loop={false} />; */}
+        </div>
         <div className="lg:col-span-2 col-span-5">
           <p className="title lg:mb-0 xl:mb-3 mb-6">
             Grow your business with crypto payments

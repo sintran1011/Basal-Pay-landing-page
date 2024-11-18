@@ -21,10 +21,9 @@ const Payment = () => {
         trigger: ".wrapper",
         target: ".lottie-container",
         path: "/QRScan.json",
-        // path:'https://assets-v2.lottiefiles.com/a/940e9c48-118b-11ee-91bd-379eb366d204/RJaC0UUtyE.json',
         speed: "medium",
         start: "top 15%",
-        end: "+=70%",
+        end: "+=40%",
         pin: ".wrapper",
         scrub: 1,
         // markers: true,
@@ -34,8 +33,8 @@ const Payment = () => {
   }, []);
 
   return (
-    <Wrapper className="wrapper w-full center overflow-hidden pb-0">
-      <div className="grid grid-cols-2 items-center">
+    <Wrapper className="wrapper w-full center pb-0">
+      <div className="grid grid-cols-2 items-center lg:pt-10">
         <div className="flex-col flex md:col-span-1 col-span-2 gap-3">
           <p className="title">Digital Currency Payments</p>
           <p className="subTitle">
@@ -52,7 +51,7 @@ const Payment = () => {
             </div>
           </div>
         </div>
-        <div className="md:size-[400px] size-full lottie-container md:col-span-1 col-span-2 mt-6 xl:mt-0 mx-auto"></div>
+        <div className="md:size-[400px] size-full lottie-container md:col-span-1 col-span-2 mt-6 xl:mt-0 mx-auto xl:scale-150"></div>
       </div>
     </Wrapper>
   );
